@@ -1,6 +1,6 @@
 import sys
 # define N
-N = 4
+N = 5
 # define alpha
 alpha = 0.5
 
@@ -9,7 +9,6 @@ sys.stdout = open("constraints.txt", "w")
 lst = []
 
 strng = "#0" + str(N + 2) + "b"
-
 
 # define a recursive function to generate a set of elements of the correct form
 def recurse(start, list, depth):
@@ -46,14 +45,15 @@ for i in lst:
             if i[j - 1] == i[k - 1]:
                 continue
             print_list.append("(" + str(j + k) + ")" + "(x" + str(j) + str(k) + ")")
-            numbers.append(str(j + k))
+            numbers.append(str(j + k)) # weight of each edge
+            # get input for each weight
     if not len(numbers):
         continue
     print("+".join(print_list), end="")
     print(" >= ", end='')
     #     print("(" + "+".join(numbers) + ")")
     sum = 0
-    for i in numbers:
+    for i in numbers: # Sum of weights
         sum += int(i)
     sum = sum * alpha
 
@@ -61,11 +61,15 @@ for i in lst:
 #     print(")")
 
 
-# Requirement:
-# Goal: Constraints equations:
-# w1x1 + w2x2 <= alpha (w1 + w2)
-# w1x1 + w2x2 <= alpha (b))
+# get input for the weights
+# N = 10
+"""
+w12 = 3.5
+w13 = 3.6
+...
+w910 = 7.3
 
-# Mistakes:
-# 1. i and j range should be 1 to 4
-# Step 2) combine type and b to form one equation
+what's the format 
+"""
+
+
