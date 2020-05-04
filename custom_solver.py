@@ -5,7 +5,7 @@ solver = pywraplp.Solver('LinearProgrammingExample', pywraplp.Solver.CBC_MIXED_I
 variable_names = list(map(lambda x: x[:-1], open('variables.txt', 'r').readlines()))
 
 # Non Negative Constraints
-variables = [solver.NumVar(0, solver.infinity(), variable_names[i]) for i in range(len(variable_names))]
+variables = [solver.IntVar(0, 1, variable_names[i]) for i in range(len(variable_names))]
 # variables = [solver.BoolVar(variable_names[i]) for i in range(len(variable_names))]
 
 # Constraints

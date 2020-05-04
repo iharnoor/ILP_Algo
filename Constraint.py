@@ -1,8 +1,10 @@
+import sys
 # define N
 N = 4
 # define alpha
-alpha = 1
+alpha = 0.5
 
+sys.stdout = open("constraints.txt", "w")
 # generate list of possible sequences
 lst = []
 
@@ -30,8 +32,6 @@ def recurse(start, list, depth):
 # Generate the list
 recurse(0, lst, N - 1)
 
-# debug print
-print(lst)
 
 # Iterate through list
 for i in lst:
