@@ -1,6 +1,6 @@
 import sys
 # define N
-N = 5
+N = 4
 # define alpha
 alpha = 0.5
 
